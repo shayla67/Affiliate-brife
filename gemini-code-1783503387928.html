@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYURA Retractable Garden Hose Reel - Affiliate Brief</title>
+    <!-- 引入美式商务最常用的高质量无衬线字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #F8FAFC;       /* 美式高管 Slate-White 浅色底 */
+            --bg-card: #FFFFFF;       /* 纯白卡片背景 */
+            --text-main: #0F172A;     /* 深色高反差文字 */
+            --text-muted: #475569;    /* 次要说明文字 */
+            --primary-teal: #0A4D40;  /* 产品自带的深苔绿 */
+            --accent-gold: #B45309;   /* 黄铜金点缀 */
+            --border-color: #E2E8F0;  /* 浅色边框线 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 40px;
+        }
+
+        /* 幻灯片单页标准容器：16:9 比例，紧凑无多余留白 */
+        .slide {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 1200px;
+            min-height: 675px;
+            margin: 0 auto 50px auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always; /* 导出PDF时自动完美分页 */
+        }
+
+        /* 统一的幻灯片页眉 */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-teal);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .slide-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-teal);
+        }
+
+        .nav-btn {
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-teal);
+            color: #ffffff;
+        }
+
+        /* 统一的幻灯片页脚，填补底部空白 */
+        .slide-footer {
+            margin-top: 25px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .footer-tag {
+            background: #E2E8F0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--primary-teal);
+        }
+
+        /* 底部联盟客提示横幅（核心：填满页面空间，增加干货） */
+        .affiliate-tip-banner {
+            background: rgba(10, 77, 64, 0.04);
+            border-left: 4px solid var(--primary-teal);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .affiliate-tip-banner strong {
+            color: var(--primary-teal);
+        }
+
+        /* 布局网格系统 */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
+        /* 样式组件 */
+        .card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            height: 100%;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-teal);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 严格执行：Q上A下 垂直高易读卡片排版 */
+        .qa-block {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .qa-question {
+            background: rgba(10, 77, 64, 0.06);
+            padding: 12px 16px;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--primary-teal);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .qa-answer {
+            padding: 14px 16px;
+            font-size: 14.5px;
+            color: var(--text-main);
+            background: #FFF;
+        }
+
+        /* 目录特供排版 */
+        .toc-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .toc-item {
+            background: var(--bg-main);
+            padding: 16px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+        }
+        .toc-item:hover {
+            border-color: var(--primary-teal);
+            background: rgba(10, 77, 64, 0.02);
+        }
+        .toc-number {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* 表格排版 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--primary-teal);
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: rgba(0,0,0,0.01); }
+
+        /* 列表红绿灯排版 (Do's & Don'ts) */
+        .list-do { list-style: none; }
+        .list-do li { margin-bottom: 10px; padding-left: 24px; position: relative; }
+        .list-do li::before { content: "✓"; color: #16A34A; font-weight: bold; position: absolute; left: 0; }
+        
+        .list-dont { list-style: none; }
+        .list-dont li { margin-bottom: 10px; padding-left: 24px; position: relative; }
+        .list-dont li::before { content: "✕"; color: #DC2626; font-weight: bold; position: absolute; left: 0; }
+
+        /* 锚点和基础标签 */
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; font-size: 15px; }
+        h1, h2, h3 { font-weight: 700; }
+
+        /* 打印模式微调，确保导出 PDF 100% 满幅无白边 */
+        @media print {
+            body { padding: 0; background: #FFF; }
+            .slide { 
+                margin: 0; 
+                box-shadow: none; 
+                border: none;
+                border-radius: 0;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== SLIDE 1: TITLE SLIDE ==================== -->
+    <div class="slide" id="slide-title">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; height: 100%; margin-top: 40px;">
+            <div style="width: 55%; flex-direction: column; justify-content: center;">
+                <!-- 💡 您的品牌 Logo 容器 -->
+                <div style="background: white; padding: 15px; display: inline-block; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 30px;">
+                    <img src="1- Logo.png" alt="AYURA Logo" style="height: 75px; display: block; object-fit: contain;">
+                </div>
+                <h1 style="font-size: 44px; color: var(--primary-teal); line-height: 1.2; margin-bottom: 15px;">
+                    Retractable Garden<br>Hose Reel
+                </h1>
+                <p style="font-size: 22px; color: var(--accent-gold); font-weight: 600; margin-bottom: 30px;">
+                    Affiliate Content Brief & Content Guide
+                </p>
+                <div style="background: var(--bg-main); padding: 20px; border-radius: 8px; border-left: 5px solid var(--accent-gold); max-width: 500px;">
+                    <p style="font-size: 15px; color: var(--text-main); font-weight: 500;">
+                        <strong>One-Sentence Positioning:</strong> A premium wall-mounted watering solution for homeowners seeking a cleaner, easier, and more durable way to manage outdoor storage.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 💡 右侧展示您的核心产品图 -->
+            <div style="width: 40%; display: flex; justify-content: center; align-items: center; border-radius: 12px; padding: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); height: 480px;">
+                <img src="2-hose reel.png" alt="AYURA Hose Reel" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>© 2026 AYURA All Rights Reserved.</span>
+            <span class="footer-tag">WELCOME AFFILIATES</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== SLIDE 2: INTERACTIVE DIRECTORY ==================== -->
+    <div class="slide" id="slide-toc">
+        <div class="slide-header">
+            <h2 class="slide-title">Content List</h2>
+            <span style="color: var(--text-muted); font-size: 14px;">Click any topic to jump directly</span>
+        </div>
+        
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+            <p style="font-size: 16px; margin-bottom: 15px; color: var(--text-muted);">Please review these essential content and strategy guidelines to optimize your campaign conversions:</p>
+            <div class="toc-list">
+                <a href="#slide-snapshot" class="toc-item"><span class="toc-number">01</span> Product Snapshot & Selling Points <span style="color:var(--primary-teal);">→</span></a>
+                <a href="#slide-audience" class="toc-item"><span class="toc-number">02</span> Target Audience & Content Angles <span style="color:var(--primary-teal);">→</span></a>
+                <a href="#slide-qa-1" class="toc-item"><span class="toc-number">03</span> Product FAQs - Part 1 (Core Value) <span style="color:var(--primary-teal);">→</span></a>
+                <a href="#slide-qa-2" class="toc-item"><span class="toc-number">04</span> Product FAQs - Part 2 (Technical & Safety) <span style="color:var(--primary-teal);">→</span></a>
+                <a href="#slide-seo" class="toc-item"><span class="toc-number">05</span> SEO & Title Suggestion <span style="color:var(--primary-teal);">→</span></a>
+                <a href="#slide-compliance" class="toc-item"><span class="toc-number">06</span> Editorial Do's & Don'ts Compliance <span style="color:var(--primary-teal);">→</span></a>
+            </div>
+        </div>
+
+        <div class="affiliate-tip-banner">
+            <strong>Conversion Tip:</strong> You can integrate the FAQ answers seamlessly into the review subheadings to preemptively handle buyer objections.
+        </div>
+        <div class="slide-footer">
+            <span>AYURA Program Onboarding</span>
+            <span class="footer-tag">DIRECTORY</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== SLIDE 3: SNAPSHOT & SELLING POINTS ==================== -->
+    <div class="slide" id="slide-snapshot">
+        <div class="slide-header">
+            <h2 class="slide-title">01. Product Snapshot & Core Selling Points</h2>
+            <a href="#slide-toc" class="nav-btn">Back to Index</a>
+        </div>
+        
+        <div class="grid-2" style="flex-grow: 1; margin-top: 10px;">
+            <div>
+                <h3 style="color: var(--accent-gold); margin-bottom: 10px; font-size: 18px;">Product Specifications</h3>
+                <table>
+                    <tr><th>Parameter</th><th>Value / Feature Details</th></tr>
+                    <tr><td><strong>Product</strong></td><td>AYURA Retractable Garden Hose Reel</td></tr>
+                    <tr><td><strong>Size</strong></td><td>100 ft x 1/2 in Capacity</td></tr>
+                    <tr><td><strong>Material</strong></td><td>3-layer PVC Hose, UV Polypropylene Double Shell</td></tr>
+                    <tr><td><strong>Type</strong></td><td>Wall-mounted automatic rewind mechanism</td></tr>
+                </table>
+                
+                <h3 style="color: var(--primary-teal); margin-top: 20px; margin-bottom: 10px; font-size: 18px;">Why Affiliates Should Promote It</h3>
+                <ul style="padding-left: 20px;">
+                    <li style="margin-bottom: 8px;"><strong>High Pain-Point Solution:</strong> Directly eliminates tangled mess and tedious manual rewinding.</li>
+                    <li style="margin-bottom: 8px;"><strong>Premium Appeal:</strong> Positioned perfectly for homeowners with large backyards.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="background: rgba(10, 77, 64, 0.02); border: 1px solid rgba(10, 77, 64, 0.15);">
+                <h3 style="color: var(--primary-teal); margin-bottom: 15px; font-size: 19px;">🔑 Premium Selling Points</h3>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                        <span style="position:absolute; left:0; color:var(--accent-gold);">★</span><strong>Reinforced Metal Shaft:</strong> Extreme outdoor durability over standard plastic variants.
+                    </li>
+                    <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                        <span style="position:absolute; left:0; color:var(--accent-gold);">★</span><strong>Smooth, Safe Rewind:</strong> Gentle, slow-retraction safety system.
+                    </li>
+                    <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                        <span style="position:absolute; left:0; color:var(--accent-gold);">★</span><strong>Self-Aligning Track:</strong> Layers the hose evenly without overlay kinks.
+                    </li>
+                    <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                        <span style="position:absolute; left:0; color:var(--accent-gold);">★</span><strong>Triple-Seal Protection:</strong> Highly advanced engineering to dramatically reduce leak risks.
+                    </li>
+                    <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                        <span style="position:absolute; left:0; color:var(--accent-gold);">★</span><strong>180° Swivel Bracket:</strong> Unrestricted yard coverage and nimble tracking.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>AYURA Content Framework</span>
+            <span class="footer-tag">PAGE 3</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== SLIDE 4: AUDIENCE & ANGLES ==================== -->
+    <div class="slide" id="slide-audience">
+        <div class="slide-header">
+            <h2 class="slide-title">02. Target Audience & Content Angles</h2>
+            <a href="#slide-toc" class="nav-btn">Back to Index</a>
+        </div>
+        
+        <div class="grid-2" style="flex-grow: 1;">
+            <div class="card">
+                <div class="card-title">🎯 Ideal Audience Groups</div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">You can focus your promotional creative assets towards these high-intent buyers:</p>
+                <ul>
+                    <li style="margin-bottom: 10px;"><strong>Property Owners:</strong> Homeowners with extensive front yards, backyards, or flower gardens.</li>
+                    <li style="margin-bottom: 10px;"><strong>DIY Auto Detailers:</strong> People who wash cars/trucks frequently in their private driveway.</li>
+                    <li style="margin-bottom: 10px;"><strong>Lawn Care Enthusiasts:</strong> Premium buyers demand heavy-duty, clean yard-maintenance tools.</li>
+                    <li style="margin-bottom: 10px;"><strong>Patio & Deck Keepers:</strong> Users prioritizing tidy, sleek, minimalist outdoor storage solutions.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📣 High-Converting Narrative Angles</div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">You can ctreat you content around these setups:</p>
+                <ol style="padding-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>The Deep Review:</strong> "Is the AYURA 100ft Automatic Hose Reel Truly Worth the Cost?"</li>
+                    <li style="margin-bottom: 10px;"><strong>Problem vs Solution:</strong> "How to Stop Messy Yard Hose Tangling and Heavy Dragging Forever."</li>
+                    <li style="margin-bottom: 10px;"><strong>The Direct Showdown:</strong> "Retractable Automated Reels vs. Traditional Hand-Crank Storage."</li>
+                    <li style="margin-bottom: 10px;"><strong>Seasonal Buying Guides:</strong> "What Specifications to Look for in a Heavy-Duty Wall-Mounted Hose Reel."</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="affiliate-tip-banner">
+            <strong>Important Note:</strong> We welcome all kinds of creative ideas. Please feel free to contact us if you need any assistance in bringing your ideas to life.
+        </div>
+        <div class="slide-footer">
+            <span>AYURA Content Framework</span>
+            <span class="footer-tag">PAGE 4</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== SLIDE 5: FAQ - PART 1 ==================== -->
+    <div class="slide" id="slide-qa-1">
+        <div class="slide-header">
+            <h2 class="slide-title">03. Content FAQ Guide (Core Value Focus)</h2>
+            <a href="#slide-toc" class="nav-btn">Back to Index</a>
+        </div>
+        
+        <!-- 💡 严格执行：Q上A下 垂直分布卡片，绝不宽泛留白 -->
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="qa-block">
+                <div class="qa-question">Q: What exactly is the AYURA Retractable Garden Hose Reel?</div>
+                <div class="qa-answer">A:  It is a premium wall-mounted automatic watering hub. It houses a 100 ft 3-layer reinforced hose and a reinforced metal shaft designed to make outdoor cleaning, plant watering, and yard maintenance significantly faster, cleaner, and more organized.</div>
+            </div>
+
+            <div class="qa-block">
+                <div class="qa-question">Q: Who is this product best optimized for?</div>
+                <div class="qa-answer">A: Homeowners who want a more premium, convenient way to manage expansive yard watering, frequent car washing, driveway cleaning, and backyard maintenance without dealing with an unsightly, dirty yard mess.</div>
+            </div>
+
+            <div class="qa-block">
+                <div class="qa-question">Q: What specific day-to-day problems does it solve for users?</div>
+                <div class="qa-answer">A: It can eliminate the severe pain points of kinked or twisted hoses, tedious heavy lifting, messy mud patches on lawns, and the exhaustive manual labor required to wind up 100 feet of dirty hose.</div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>AYURA Q&A Library</span>
+            <span class="footer-tag">PAGE 5</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== SLIDE 6: FAQ - PART 2 ==================== -->
+    <div class="slide" id="slide-qa-2">
+        <div class="slide-header">
+            <h2 class="slide-title">04. Content FAQ Guide (Technical & Safety)</h2>
+            <a href="#slide-toc" class="nav-btn">Back to Index</a>
+        </div>
+        
+        <!-- 💡 严格执行：Q上A下 垂直分布卡片，填满视野 -->
+        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="qa-block">
+                <div class="qa-question">Q: Why is the heavy-duty Reinforced Metal Shaft a major marketing differentiator?</div>
+                <div class="qa-answer">A: Most standard market reels utilize cheap plastic internal axles that warp or crack under high water pressure and temperature swings. AYURA’s core metal shaft ensures industrial-grade durability and a significantly longer lifetime under harsh outdoor elements.</div>
+            </div>
+
+            <div class="qa-block">
+                <div class="qa-question">Q: Does it genuinely prevent hose binding and messy tangles during use?</div>
+                <div class="qa-answer">A: Yes. It is integrated with a proprietary self-aligning automatic track system that methodically guides the hose back onto the inner core layer-by-layer, mechanically eliminating overlapping kinks and binding.</div>
+            </div>
+
+            <div class="qa-block">
+                <div class="qa-question">Q: Is the automatic rewind feature safe for households with kids or pets?</div>
+                <div class="qa-answer">A: Absolutely. Instead of whipping back dangerously like common industrial reels, AYURA utilizes a controlled, uniform slow-retraction safety system to ensure a gentle, steady take-up into the UV polypropylene outer shell.</div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>AYURA Q&A Library</span>
+            <span class="footer-tag">PAGE 6</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== SLIDE 7: SEO & TITLE IDEAS ==================== -->
+    <div class="slide" id="slide-seo">
+        <div class="slide-header">
+            <h2 class="slide-title">05. SEO & Title Suggestion</h2>
+            <a href="#slide-toc" class="nav-btn">Back to Index</a>
+        </div>
+        
+        <div class="grid-2" style="flex-grow: 1; margin-top: 10px;">
+            <div class="card">
+                <div class="card-title" style="color: var(--accent-gold);">🔍 High-Intent SEO Keywords</div>
+                <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--text-muted);">You can scatter these exact-match search phrases across your content text:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px;">
+                    <div style="background:#FFF; padding:8px; border:1px solid #E2E8F0; border-radius:4px;">• retractable garden hose reel</div>
+                    <div style="background:#FFF; padding:8px; border:1px solid #E2E8F0; border-radius:4px;">• wall mounted hose reel</div>
+                    <div style="background:#FFF; padding:8px; border:1px solid #E2E8F0; border-radius:4px;">• automatic hose reel</div>
+                    <div style="background:#FFF; padding:8px; border:1px solid #E2E8F0; border-radius:4px;">• heavy duty hose reel</div>
+                    <div style="background:#FFF; padding:8px; border:1px solid #E2E8F0; border-radius:4px;">• no kink hose reel</div>
+                    <div style="background:#FFF; padding:8px; border:1px solid #E2E8F0; border-radius:4px;">• hose reel for large yard</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">💡 High-CTR Title Templates</div>
+                <p style="font-size: 13.5px; margin-bottom: 12px; color: var(--text-muted);">You can take a look at these title styles designed to secure immediate clicks:</p>
+                <ul style="list-style-type: square; padding-left: 20px; font-size: 14px;">
+                    <td style="margin-bottom: 8px;">"Is the AYURA Retractable Garden Hose Reel Actually Worth It?"</td>
+                    <td style="margin-bottom: 8px;">"Best Retractable Garden Hose Reel for Homeowners in 2026"</td>
+                    <td style="margin-bottom: 8px;">"Why I Switched From Traditional Spools to a Retractable Reel"</td>
+                    <td style="margin-bottom: 8px;">"How to Keep Your Garden Hose 100% Organized & Tangle-Free"</td>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span>AYURA Optimization Specs</span>
+            <span class="footer-tag">PAGE 7</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== SLIDE 8: EDITORIAL COMPLIANCE ==================== -->
+    <div class="slide" id="slide-compliance">
+        <div class="slide-header">
+            <h2 class="slide-title">06. Editorial Compliance & Guidelines</h2>
+            <a href="#slide-toc" class="nav-btn">Back to Index</a>
+        </div>
+        
+        <div class="grid-2" style="flex-grow: 1;">
+            <div class="card" style="border-top: 4px solid #16A34A;">
+                <div class="card-title" style="color: #16A34A;">✅ Content DO'S</div>
+                <ul class="list-do" style="font-size: 14px;">
+                    <li><strong>Focus Deeply on Benefits:</strong> Highlight how much back strain is avoided and time is saved on yard cleanup.</li>
+                    <li><strong>Speak Naturally:</strong> Use approachable, authentic, and descriptive everyday language.</li>
+                    <li><strong>Showcase Real-World Scenarios:</strong> Illustrate daily tasks like car washing, garden irrigation, and deck cleaning.</li>
+                    <li><strong>Maintain Credibility:</strong> Keep an honest, balanced, and trustworthy tone to build long-term reader loyalty.</li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #DC2626;">
+                <div class="card-title" style="color: #DC2626;">❌ Content DON'TS</div>
+                <ul class="list-dont" style="font-size: 14px;">
+                    <li><strong>No Plagiarism:</strong> Please do not copy Amazon product review descriptions or manual texts directly.</li>
+                    <li><strong>Avoid Overpromising:</strong> Do not fabricate groundless performance capabilities or warranty timelines.</li>
+                    <li><strong>De-escalate Sales Talk:</strong> Please avoid sounding overly aggressive, robotic, or commercial.</li>
+                    <li><strong>Balance Specs:</strong> Do not just list engineering numbers;  you can explain the actual user benefit of each specification.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="affiliate-tip-banner" style="background: rgba(180, 83, 9, 0.05); border-left-color: var(--accent-gold);">
+            <strong>Final Check Before Publishing:</strong> Double-check that your custom affiliate link is correct and clearly placed in the content.
+        </div>
+        <div class="slide-footer">
+            <span>AYURA Affiliate Compliance</span>
+            <span class="footer-tag">PAGE 8</span>
+        </div>
+    </div>
+
+</body>
+</html>
